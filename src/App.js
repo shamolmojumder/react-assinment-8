@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import data from './Data/MOCK_DATA.json'
 import './App.css';
+import Courses from './Components/Courses/Courses';
+
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
+  const [loadData,setLoadData] = useState ([])
+  // console.log(data);
+
+
+
+  useEffect(()=>{
+    setLoadData(data)
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={{textAlign:'center'}}> Total Course: {loadData.length} </h1>
+     {
+       loadData.map(loadDat=>  <Courses loadDat={loadDat}></Courses> )
+     }
+
+   
     </div>
   );
 }
