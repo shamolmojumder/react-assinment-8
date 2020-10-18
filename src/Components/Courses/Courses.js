@@ -12,10 +12,10 @@ const Courses = (props) => {
             
             <h2> Mentor Name: {mentorName} </h2>
             <img style={{height:'150px'}} src={image} alt=""/>
-            <h2>Price  : {price} </h2>
+            <h2>Price  : $ {price} </h2>
             <h2>Course Name: {course} </h2>
             <p>Id: {id} </p>
-            <button style={{border:'none',backgroundColor:"slateblue",height:'30px',height:"10px 0px 10px 5px"}}> Enroll   </button>
+            <button style={{border:'none',backgroundColor:"slateblue",height:'30px',margin:"10px 0"}}> Enroll   </button>
         </div>
     );
 };
