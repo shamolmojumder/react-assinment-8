@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Courses = (props) => {
-    console.log(props);
+    // console.log(props);
     const {id,mentorName,image,price,course}=props.loadDat
+    const handleBtn=props.handleBtn
 
     const courseStyle={
         border:'1px solid black'
@@ -15,7 +16,7 @@ const Courses = (props) => {
             <h2>Price  : $ {price} </h2>
             <h2>Course Name: {course} </h2>
             <p>Id: {id} </p>
-            <button style={{border:'none',backgroundColor:"slateblue",height:'30px',margin:"10px 0"}}> Enroll   </button>
+            <button onClick={()=>handleBtn(props.loadDat)} style={{border:'none',backgroundColor:"slateblue",height:'30px',margin:"10px 0"}}> Enroll   </button>
         </div>
     );
 };
