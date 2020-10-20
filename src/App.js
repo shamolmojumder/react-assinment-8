@@ -9,6 +9,7 @@ import Cart from './Components/Cart/Cart';
 
 function App() {
   const [loadData,setLoadData] = useState ([])
+  // console.log(loadData);
   const [cart,setCart]=useState([]);
 
   
@@ -29,7 +30,7 @@ function App() {
       <h1 style={{textAlign:'center'}}> Total Course: {loadData.length} </h1>
       <Cart cart={cart}></Cart>
      {
-       loadData.map(loadDat=>  <Courses loadDat={loadDat} handleBtn={handleBtn} ></Courses> )
+       loadData.map(loadDat=>  <Courses loadDat={loadDat} handleBtn={handleBtn} key={loadDat.price}></Courses> )
      }
 
     </div>
